@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Question</title>
+</head>
+<body>
+{% if ques.title == None %}
+<p>Question does not exist or has been removed</p>
+{% else %}
+<p><b>Title:</b> {{ques.title }}</p>
+<p><b>Created by:</b> {{ques.owner}}</p>
+<p><b>Created on:</b> {{ques.created_date}}</p>
+<p><b>Modified on:</b> {{ques.updated_date}}</p>
+
+<p><a href="/list/edit/{{ques.quest_id}}">Edit</a></p>
+<p><a href="/list/delete/{{ques.quest_id}}">Delete</a></p>
+{% endif %}
+</body>
+</html>

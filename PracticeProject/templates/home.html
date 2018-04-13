@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Home</title>
+</head>
+<body>
+{% block content %}
+
+{% if user.is_authenticated %}
+<h1>Welcome {{user.get_username}}</h1>
+<ul>
+    <li><a href="/post">Post</a></li>
+    <li><a href="/list">See All Questions</a></li>
+</ul>
+{% else %}
+<h1>You need to login first, please click on the link below to login.</h1>
+<ul>
+    <li><a href="/accounts/login">Login</a></li>
+</ul>
+{% endif %}
+{% endblock %}
+</body>
+</html>
